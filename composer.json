@@ -1,0 +1,34 @@
+{
+    "name": "javihgil/genderize-io-client",
+    "description": "PHP client for genderize.io",
+    "keywords": ["genderize.io","php","client","symfony"],
+    "license": "MIT",
+    "type": "library",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Jhg\\GenderizeIoClient\\": ""
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.2.*",
+        "mockery/mockery": "0.9.*"
+    },
+    "require": {
+        "php": ">=5.4",
+        "symfony/intl": "~2.3",
+        "guzzle/guzzle": "~3.8"
+    },
+    "suggest": {
+        "javihgil/genderize-io-bundle": "To integrate genderize.io client into Symfony projects"
+    },
+    "scripts": {
+        "test": [
+            "vendor/bin/phpunit -c phpunit.xml"
+        ],
+        "coverage": [
+            "vendor/bin/phpunit -c phpunit.xml --coverage-html target/reports/phpunit-coverage"
+        ]
+    }
+}
