@@ -39,6 +39,11 @@ class Genderizer
      * @var array
      */
     protected $validLanguages;
+    
+      /**
+     * @var string
+     */
+    protected $apiKey;
 
     /**
      * @param GenderizeClient $genderizeClient
@@ -80,6 +85,10 @@ class Genderizer
         $query = [
             'name' => $nameOrNames,
         ];
+        
+        if ($this->apiKey !== null) {
+            $query['apikey'] = $this->apiKey;
+        }
 
         if ($country !== null) {
             $query['country_id'] = $country;
@@ -107,5 +116,16 @@ class Genderizer
             // multiple or single query
             return $data;
         }
+    }
+    
+    /**
+     * @param string $apiKey
+     *
+     * @return Genderizer
+     */
+    public function setApiKey($apiKey)
+    {
+        $this->apiKey = $apiKey;
+        return $this;
     }
 }
