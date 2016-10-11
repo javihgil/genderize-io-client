@@ -16,7 +16,8 @@
         "mockery/mockery": "0.9.*"
     },
     "require": {
-        "php": ">=5.4"        
+        "php": ">=5.4",
+        "guzzlehttp/guzzle": ">=4.0,<=7.0"
     },
     "suggest": {
         "javihgil/genderize-io-bundle": "To integrate genderize.io client into Symfony projects"
