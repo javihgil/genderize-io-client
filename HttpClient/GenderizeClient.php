@@ -11,7 +11,7 @@ use Guzzle\Http\Message\Response;
  * 
  * @package Jhg\GenderizeIoClient\HttpClient
  */
-class GenderizeClient extends Client
+class GenderizeClient extends \GuzzleHttp\Client
 {
     /**
      * @var null|Response
