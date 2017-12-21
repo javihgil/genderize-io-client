@@ -11,7 +11,7 @@ use Guzzle\Http\Message\Response;
  * 
  * @package Jhg\GenderizeIoClient\HttpClient
  */
-class GenderizeClient extends Client
+class GenderizeClient extends \GuzzleHttp\Client
 {
     /**
      * @var null|Response
@@ -21,7 +21,7 @@ class GenderizeClient extends Client
     /**
      * @param Response $lastResponse
      */
-    public function setLastResponse(Response $lastResponse)
+    public function setLastResponse(\GuzzleHttp\Message\Response $lastResponse)
     {
         $this->lastResponse = $lastResponse;
     }
@@ -34,9 +34,9 @@ class GenderizeClient extends Client
     public function genderize(array $query)
     {
         $queryString = '?'.http_build_query($query);
-
-        $request = $this->get($queryString);
-        $this->setLastResponse($request->send());
+        $url = 'http://api.genderize.io/'.$queryString;
+        $response = $this->get($url);
+        $this->setLastResponse($response);
 
         return $this->lastResponse->json();
     }

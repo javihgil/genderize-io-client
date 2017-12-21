@@ -54,7 +54,7 @@ class Genderizer
             $this->genderizeClient = $genderizeClient;
         } else {
             // create default client
-            $this->genderizeClient = new GenderizeClient('https://api.genderize.io/');
+            $this->genderizeClient = new GenderizeClient(); ///'https://api.genderize.io/'
         }
 
         $this->validCountries = Intl::getRegionBundle()->getCountryNames();
